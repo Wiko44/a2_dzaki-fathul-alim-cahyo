@@ -8,10 +8,7 @@ int main ( )
 	int howmany, status, whichone, child1, child2 ;
 	if ( (child1 = (int) fork()) == 0 ) /* Parent melahirkan child ke-1 */
 	{
-		printf("Hi, I am the first child, my ID is %d, and my parent ID
-
-				is %d\n", getpid(), getppid() ) ;
-
+		printf("Hi, I am the first child, my ID is %d, and my parent ID is %d\n", getpid(), getppid() ) ;
 		sleep(10) ;
 		printf("\nexiting first child\n");
 		exit(0) ;
@@ -24,10 +21,7 @@ int main ( )
 	}
 	if ( (child2 = (int) fork()) == 0 ) /* Parent melahirkan child ke-2 */
 	{
-		printf("Hi, I am the second child, my ID is %d, and my parent ID
-
-				is %d\n", getpid(), getppid() ) ;
-
+		printf("Hi, I am the second child, my ID is %d, and my parent ID is %d\n", getpid(), getppid() ) ;
 		sleep(5) ;
 		printf("\nexiting second child\n");
 		exit(0) ;
@@ -48,18 +42,20 @@ int main ( )
 		printf("child2 id = %d\n", child2);
 		if (whichone == child1)
 			printf ("First child exited\n") ;
-		else if (whichone == child2)
+		else if (whichone == child2){
 			printf ("Second child exited\n") ;
+		}
 		else
 		{
 			printf ("not child exited\n");
 			printf ("whichone = %d\n", whichone);
 		}
-		if ( (status & 0xffff) == 0 )
-			printf ("correctly\n") ;
-		else
-			printf ("uncorrectly\n") ;
 
+		if ( (status & 0xffff) == 0 ){
+			printf ("correctly\n") ;
+		}else{
+			printf ("uncorrectly\n") ;
+		}
 	}
 	printf ("\nParent terminated\n");
 	return 0;

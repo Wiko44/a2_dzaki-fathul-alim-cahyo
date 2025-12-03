@@ -8,4 +8,5 @@ int main (argc, argv )
 			&argv[0] ) ;
 	printf ("EXEC Failed\n") ;
 	/* Baris di atas akan dicetak saat terdapat kesalahan */
+	return 0;
 }
