@@ -1,5 +1,8 @@
 #include <stdio.h>
-main()
+#include <unistd.h>
+#include <stdlib.h>
+
+int main()
 {
 	int pid ;
 	printf("I'am the original process with PID %d and PPID %d.\n",
@@ -18,5 +21,7 @@ main()
 		printf("I'm the child with PID %d and PPID %d.\n",
 				getpid(), getppid()) ;
 	}
-	printf ("PID %d terminates.\n", getpid()) ;
+	printf ("PID %d terminates.\n", getpid()) ;	
+	
+	return 0;
 }

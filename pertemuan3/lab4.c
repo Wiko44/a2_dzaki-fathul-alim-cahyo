@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <sys/wait.h> /* mengandung fungsi wait */
 void main(void)
 {
@@ -12,8 +13,9 @@ void main(void)
 		perror("bad fork");
 		exit(1);
 	}
-	if (pid == 0) printf("I am the child process.\n");
-	else {
+	if (pid == 0){ 
+		printf("I am the child process.\n");
+	} else {
 		wait(&status); /* parent menunggu child selesai */
 		printf("I am the parent process.\n");
 	}

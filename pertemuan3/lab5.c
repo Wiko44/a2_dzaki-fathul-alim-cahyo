@@ -2,8 +2,9 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/wait.h>
-main() {
+int main() {
 	int forkresult;
+
 	printf("%d: I am the parent. Remember my number!\n", getpid());
 	printf("%d: I am now going to fork ... \n", getpid());
 	forkresult = fork();
@@ -17,4 +18,6 @@ main() {
 		printf("%d: Hi! I am the child.\n", getpid());
 	}
 	printf("%d: like father like son. \n", getpid());
+
+	return 0;
 }
